@@ -1,0 +1,11 @@
+schema: https://api.thegraph.com/subgraphs/name/dansofter/bribe-subgraph-mainnet
+documents: "./**/*.gql"
+generates:
+  ./codegen.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-query
+    config:
+      fetcher:
+        endpoint: https://api.thegraph.com/subgraphs/name/dansofter/bribe-subgraph-mainnet

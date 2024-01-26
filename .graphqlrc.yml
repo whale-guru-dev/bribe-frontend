@@ -1,0 +1,2 @@
+schema: https://api.thegraph.com/subgraphs/name/dansofter/bribesubgraph
+documents: "./pages/**/*.{gql,js,ts,jsx,tsx}"

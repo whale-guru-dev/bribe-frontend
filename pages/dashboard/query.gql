@@ -1,0 +1,76 @@
+
+
+query UserDeposits {
+  userDeposits {
+    __typename
+    user
+    id
+    asset
+    amount
+    timestamp
+    user
+  }
+}
+
+query UserWithdraws {
+  userWithdraws {
+    __typename
+    user
+    id
+    asset
+    amount
+    timestamp
+  }
+}
+
+query Votes {
+  votes {
+    __typename
+    id
+    proposalId
+    support
+    timestamp
+  }
+}
+
+query Bids {
+  bidHistories {
+    __typename
+    id
+    proposalId
+    prevHighestBidder
+    highestBidder
+    highestBid
+    timestamp
+  }
+}
+
+query BidsPerProposal($pid: BigInt) {
+  bidHistories(where: {proposalId: $pid}) {
+    id
+    proposalId
+    highestBidder
+    highestBid
+    timestamp
+  }
+}
+
+query MyBids($me: Bytes) {
+  bidHistories(where: {highestBidder: $me}) {
+    id
+    proposalId
+    highestBidder
+    highestBid
+    timestamp
+  }
+}
+
+query Rewards {
+  bribePerSeconds {
+    __typename
+    id
+    oldReward
+    newReward
+    timestamp
+  }
+}
